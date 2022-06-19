@@ -1,0 +1,37 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  padding: 2em 5em;
+}
+
+table {
+  border-collapse: unset;
+  border-spacing: 0.5em;
+  background-color: #f0f0f0;
+  border-radius: 1em;
+  margin: auto;
+
+  th {
+    border-radius: 1em;
+    background-color: #7f7fa9;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    border: 2px solid #9f9fd4;
+  }
+
+  tr {
+    td {
+      padding: 0.5em 1em;
+      border-radius: 1em;
+    }
+
+    &:nth-child(even) td {
+      background-color: #dbdbdb;
+    }
+
+    &:nth-child(odd) td {
+      background-color: #fbfbfb;
+    }
+  }
+}

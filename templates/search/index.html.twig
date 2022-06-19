@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form(form, {'attr': {'class': 'w-50 m-auto text-center'}}) }}
+    {% if establishments %}
+        <h1 class="text-center mb-4">Liste des établissements ({{ establishments['count'] }})</h1>
+        {% if establishments['list'] is defined %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numéro UAI</th>
+                        <th>Nom de l'établissement</th>
+                        <th>Secteur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for establishment in establishments['list'] %}
+                    <tr>
+                        <td>{{ establishment['numero_uai'] }}</td>
+                        <td>{{ establishment['appellation_officielle'] }}</td>
+                        <td>{{ establishment['secteur_public_prive_libe'] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+{% endblock %}
