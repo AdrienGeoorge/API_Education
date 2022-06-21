@@ -37,10 +37,10 @@ class EstablishmentLocation
 
         if ($response->getStatusCode() === 200) {
             $response = $response->toArray();
-            $return['count'] = $response['total_count'];
+            $return['count'] = count($response);
 
-            foreach ($response['records'] as $item) {
-                $return['list'][] = $item['record']['fields'];
+            foreach ($response as $item) {
+                $return['list'][] = $item;
             }
 
             return $return;
